@@ -1,9 +1,44 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "math_util.h"
 
+//FAST, ACCURATE, ROBUST
+
 int main()
 {
+    
+
+    char buffer[1024] ;
+    char *record,*line;
+    int k=0,l=0;
+    int mat[1500][8];
+    FILE *fstream = fopen("/Users/adri.vazquez/Dropbox/MEAM410 Mechatronics/Robockey/robopuff/Matrix/Matrix/StarsA.csv","r");
+    if(fstream == NULL)
+    {
+        printf("\n file opening failed ");
+        return -1 ;
+    }
+    
+    line=fgets(buffer,sizeof(buffer),fstream);
+    record = strtok(line,",");
+    
+    for(k=0;k<1376;k++){
+        for(l=0;l<8;l++){
+            if(record!=NULL){
+                mat[k][l] = atoi(record);
+                }
+            record = strtok(NULL,",");
+            }
+        line=fgets(buffer,sizeof(buffer),fstream);
+        record = strtok(line,",");
+        }
+    
+    printf("\n No of lines read %0.5d", k);
+    
+    
+    
+    
     int n=5;
     int m=5;
     Matrix *m1=Matrix_create(n,m);
@@ -19,7 +54,7 @@ int main()
         }
     }
     
-    Matrix *top=Matrix_product(m1,m2);
+    //Matrix *top=Matrix_product(m1,m2);
     Matrix_dump(m1);
     printf("_________Inverting____\n");
     m2=Matrix_inverse(m1);

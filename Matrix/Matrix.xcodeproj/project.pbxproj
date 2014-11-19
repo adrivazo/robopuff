@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D91B0401A1D2F4A00F0D171 /* StarsA.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StarsA.csv; sourceTree = "<group>"; };
 		3DC1DE931A1BFE4100D657AF /* Matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Matrix; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC1DE961A1BFE4100D657AF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		3DC1DE9F1A1BFE6A00D657AF /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		3DC1DE951A1BFE4100D657AF /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
+				3D91B0401A1D2F4A00F0D171 /* StarsA.csv */,
 				3DC1DEAA1A1C13FF00D657AF /* cpoint */,
 				3DC1DEA31A1C107300D657AF /* util */,
 				3DC1DE9D1A1BFE6A00D657AF /* cmatrix */,
@@ -276,6 +278,7 @@
 				3DC1DE9C1A1BFE4100D657AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
