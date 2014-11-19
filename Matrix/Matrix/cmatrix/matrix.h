@@ -37,6 +37,9 @@ extern Matrix *Matrix_sub(Matrix *m1, Matrix *m2);
 extern Matrix *Matrix_product(Matrix *m1, Matrix *m2);
 extern Matrix *Matrix_product_scaler(Matrix *m, double s);
 extern double Matrix_get(Matrix *m, int i, int j);
+extern void Matrix_find_min(int row_col[], Matrix *m);
+extern void Matrix_find_max(int row_col[], Matrix *m);
+
 extern void Matrix_set(Matrix *m, int i, int j, double value);
 extern Matrix* Matrix_clone(Matrix *source);
 extern Matrix *Matrix_echelon(Matrix* m);

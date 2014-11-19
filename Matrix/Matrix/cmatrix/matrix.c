@@ -112,6 +112,54 @@ double Matrix_get(Matrix *m, int i, int j){
     return(m->data[i*m->cols+j]);
 }
 
+void Matrix_find_min(int row_col[], Matrix *m){
+    
+    int row=0;
+    int col=0;
+    
+    double min_so_far = Matrix_get(m, 0, 1);
+    double *p=m->data;
+    int i,j,d1=m->rows, d2=m->cols;
+    
+    for (i=0;i<d1;i++){
+        for (j=0;j<d2;j++){
+            if((!isnan(*p)) && (*p<min_so_far)){
+                min_so_far=*p;
+                row=i;
+                col=j;
+            }
+            p++;
+        }
+    }
+    
+    row_col[0] = row;
+    row_col[1]= col;
+}
+
+
+void Matrix_find_max(int row_col[], Matrix *m){
+    int row=0;
+    int col=0;
+    
+    double max_so_far = Matrix_get(m, 0, 1);
+    double *p=m->data;
+    int i,j,d1=m->rows, d2=m->cols;
+    
+    for (i=0;i<d1;i++){
+        for (j=0;j<d2;j++){
+            if((!isnan(*p)) && (*p>max_so_far)){
+                max_so_far=*p;
+                row=i;
+                col=j;
+            }
+            p++;
+        }
+    }
+    
+    row_col[0] = row;
+    row_col[1]= col;
+}
+
 void Matrix_set(Matrix *m, int i, int j, double value){
     m->data[i*m->cols+j]=value;
 }

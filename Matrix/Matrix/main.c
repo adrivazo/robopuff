@@ -19,14 +19,12 @@ int main()
         }
     }
     
-    
     Matrix *top=Matrix_product(m1,m2);
     Matrix_dump(m1);
     printf("_________Inverting____\n");
     m2=Matrix_inverse(m1);
     printf("OK\n");
     Matrix_dump(Matrix_inverse(m1));
-    
     
     Point *p0 = Point_create(1, 10);
     Point *p1 = Point_create(25, 88);
@@ -44,17 +42,33 @@ int main()
     double distance = Point_get_distance_between(p1, p2);
     printf("%0.5f ",distance);
     
-    
     Point points[4];
     points[0]=*p0;
     points[1]=*p1;
     points[2]=*p2;
     points[3]=*p3;
     
-    
     Matrix *DM = Util_get_distance_matrix(points);
     
     printf("________Distance Matrix____\n");
     Matrix_dump(DM);
+    
+    printf("________Min val in distance matrix____\n");
+    int row_col_min[2];
+    int row_col_max[2];
+    
+    
+    Matrix_find_min(row_col_min, DM);
+    printf("row: %0.5d",row_col_min[0]);
+    printf("\n");
+    printf("col: %0.5d",row_col_min[1]);
+    
+    printf("________Max val in distance matrix____\n");
+    Matrix_find_max(row_col_max, DM);
+    printf("row: %0.5d",row_col_max[0]);
+    printf("\n");
+    printf("col: %0.5d",row_col_max[1]);
+    
+    
     return 0;
 }

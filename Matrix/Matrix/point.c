@@ -40,7 +40,6 @@ Point *Point_product_scaler(Point *m, double s){
     return(newm);
 }
 
-
 Point *Point_get_midpoint(Point *m1, Point *m2){
     return Point_product_scaler(Point_add(m1, m2),0.5);
 }
@@ -49,7 +48,6 @@ double Point_get_distance_between(Point *m1, Point *m2){
     Point *diff = Point_sub(m1, m2);
     return sqrt(pow(Point_get_x(diff),2)+pow(Point_get_y(diff), 2));
 }
-
 
 double Point_get_x(Point *m){
     return m->x;
