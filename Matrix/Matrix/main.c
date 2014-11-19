@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "matrix.h"
-#include "point.h"
+#include "math_util.h"
 
 int main()
 {
@@ -29,8 +28,10 @@ int main()
     Matrix_dump(Matrix_inverse(m1));
     
     
-    Point *p1 = Point_create(0.1, 0.56);
-    Point *p2 = Point_create(5, 25.4);
+    Point *p0 = Point_create(1, 10);
+    Point *p1 = Point_create(25, 88);
+    Point *p2 = Point_create(9, 153);
+    Point *p3 = Point_create(45, 76);
     
     Point *sum = Point_add(p1, p2);
     printf("_________Sum____\n");
@@ -43,5 +44,17 @@ int main()
     double distance = Point_get_distance_between(p1, p2);
     printf("%0.5f ",distance);
     
+    
+    Point points[4];
+    points[0]=*p0;
+    points[1]=*p1;
+    points[2]=*p2;
+    points[3]=*p3;
+    
+    
+    Matrix *DM = Util_get_distance_matrix(points);
+    
+    printf("________Distance Matrix____\n");
+    Matrix_dump(DM);
     return 0;
 }

@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include "point.h"
-#include "matrix.h"
 
 Point *Point_create(double x, double y){
     Point *p = (Point*)malloc(sizeof(Point));

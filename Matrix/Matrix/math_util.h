@@ -10,6 +10,10 @@
 #define __Matrix__math_util__
 
 #include <stdio.h>
+#include "matrix.h"
+#include "point.h"
+
+extern Matrix *Util_get_distance_matrix(Point * PointArr);
 
 
 
