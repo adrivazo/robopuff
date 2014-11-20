@@ -14,6 +14,10 @@
 #include "point.h"
 
 extern Matrix *Util_get_distance_matrix(Point * PointArr);
+extern int Util_is_bad_star(Point *star_wannabe);
+extern int Util_find_intersection(int * r_c_min,int *r_c_max);
+extern int Util_find_other_star(int y_pos_star, int * r_c_max);
+
 
 
 
